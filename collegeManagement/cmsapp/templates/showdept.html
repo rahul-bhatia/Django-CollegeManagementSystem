@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block title%}
+DepartMent
+{% endblock%}
+
+{% block content%}
+<h1>Department Page</h1>
+<a href="{% url 'adddept'%}">Add department</a>
+<table border="2">
+	{% if data%}
+		<tr>
+			<th>Dept Id</th>
+			<th>Dept Name</th>
+			<th>Delete</th>
+		</tr>
+		{% for d in data%}
+		<tr>
+			<td>{{d.deptid}}</td>
+			<td>{{d.deptname}}</td>
+			<td><a href="{% url 'delete' id=d.deptid %}" onclick="return confirm('Are u sure')">Delete</a></td>
+		</tr>
+		{% endfor%}
+	{% else %}
+	<tr>
+		<td>No Data Found</td>
+	</tr>
+	{% endif %}
+</table>
+{% endblock%}

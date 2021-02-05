@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title%}{% endblock%}</title>
+	<style type="text/css">
+		*{
+			font-family: courier calibri;
+			font-size: 30px;
+		}
+		.nav {
+			background-color: black;
+		}
+		.nav a{
+			color:white;
+		}
+	</style>
+</head>
+<body>
+	<CENTER>
+		<div class='nav'>
+			<a href="{%url 'home' %}">Home</a>
+			<a href="{%url 'showdept' %}">Department</a>
+			<a href="{%url 'student' %}">Student</a>
+
+		</div>
+		{% block content%}{% endblock%}
+	</CENTER>
+</body>
+</html>

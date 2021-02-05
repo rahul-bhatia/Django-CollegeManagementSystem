@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block title%}
+Add DepartMent
+{% endblock%}
+
+{% block content%}
+<h1>Add Department Page</h1>
+
+	<FORM method="POST" action="{% url 'adddept'%}">
+		{% csrf_token%}
+		<table border="2">
+			{{fm.as_table}}
+		</table>
+		<input type="submit" name="Submit Department">
+	</FORM>
+		{{msg}}
+
+{% endblock%}
