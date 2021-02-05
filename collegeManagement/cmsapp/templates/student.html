@@ -7,7 +7,12 @@ Students
 {% block content%}
 <h1>Student Page</h1>
 <a href="{% url 'addstudent'%}">Add Student</a>
+<form action="{% url 'search' %}">
+		<input type="text" name="search" placeholder="Enter name">
+		<input type="submit" value="search">
+	</form>
 <table border="2">
+
 	{% if data%}
 		<tr>
 			<th>rno</th>

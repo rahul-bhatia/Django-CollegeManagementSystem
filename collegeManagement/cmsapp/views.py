@@ -57,4 +57,9 @@ def addstudent(request):
 		print(fm)
 		return render(request,'addstudent.html',{'fm':fm})
 
+def search(request):
+	x=request.GET.get('search')
+	print(x)
+	dm=StudentModel.objects.filter(name=x)
+	return render(request,'student.html',{'data':dm})
 

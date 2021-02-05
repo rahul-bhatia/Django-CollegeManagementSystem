@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from cmsapp.views import home,showdept,adddept,student,delete,addstudent,deleteStudent
+from cmsapp.views import home,showdept,adddept,student,delete,addstudent,deleteStudent,search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,5 @@ urlpatterns = [
     path('delete/<int:id>',delete,name='delete'),
     path('addstudent',addstudent,name="addstudent"),
     path('deleteStudent/<int:id>',deleteStudent,name='deleteStudent'),
-
+    path('search',search,name="search")
 ]
